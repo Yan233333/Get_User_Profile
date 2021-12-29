@@ -65,7 +65,7 @@ class GetData (object):
         while (True):
             pages += 1;
             url = "https://api.bilibili.com/x/space/bangumi/follow/list?type=1&vmid=";
-            url = url + self.uid + "&pn=" + str (pages);
+            url += self.uid + "&pn=" + str (pages);
             res = requests.get (url = url, headers = headers);
             res.encoding = "utf-8";
             data = json.loads (res.text);
@@ -89,7 +89,7 @@ class GetData (object):
         while (True):
             pages += 1;
             url = "https://api.bilibili.com/x/space/arc/search?mid=";
-            url = url + self.uid + "&pn=" + str (pages);
+            url += self.uid + "&pn=" + str (pages);
             res = requests.get (url = url, headers = headers);
             res.encoding = "utf-8";
             data = json.loads (res.text);
