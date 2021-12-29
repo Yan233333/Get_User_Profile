@@ -59,13 +59,13 @@ class GetData (object):
             f.write ("生日: " + data["data"]["birthday"] + "\n");
         print ("完成!");
     def bangumi (self):
+        URL = "https://api.bilibili.com/x/space/bangumi/follow/list?type=1&vmid=";
         f.write ("\n追番列表:\n");
         pages = 0;
         records = 0;
         while (True):
             pages += 1;
-            url = "https://api.bilibili.com/x/space/bangumi/follow/list?type=1&vmid=";
-            url += self.uid + "&pn=" + str (pages);
+            url = URL + self.uid + "&pn=" + str (pages);
             res = requests.get (url = url, headers = headers);
             res.encoding = "utf-8";
             data = json.loads (res.text);
@@ -83,13 +83,13 @@ class GetData (object):
                 break;
         print ("完成!");
     def video (self):
+        URL = "https://api.bilibili.com/x/space/arc/search?mid=";
         f.write ("\n视频列表:\n");
         pages = 0;
         records = 0;
         while (True):
             pages += 1;
-            url = "https://api.bilibili.com/x/space/arc/search?mid=";
-            url += self.uid + "&pn=" + str (pages);
+            url = URL + self.uid + "&pn=" + str (pages);
             res = requests.get (url = url, headers = headers);
             res.encoding = "utf-8";
             data = json.loads (res.text);
