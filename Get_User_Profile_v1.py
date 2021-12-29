@@ -125,9 +125,11 @@ while (True):
         f.close ();
         os.system ("data.txt");
         sys.exit (0);
-    if (data_choice == "1"):
+    elif (data_choice == "1"):
         op_process.bangumi ();
-    if (data_choice == "2"):
+    elif (data_choice == "2"):
         op_process.video ();
-    if (data_choice == "3"):
+    elif (data_choice == "3"):
         op_process.AdvancedUserProfile ();
+    else:
+        print ("输入的字符不能被识别");
