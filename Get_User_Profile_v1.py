@@ -46,15 +46,13 @@ class GetData (object):
         res = requests.get (url = url, headers = headers);
         res.encoding = "utf-8";
         data = json.loads (res.text);
-        f.write ("\n用户信息:\n性别: " + data["data"]["sex"] + "\n等级: " + str (data["data"]["level"]) + "\n硬币数: " + str (data["data"]["coins"]) + "\n");
-        if (data["data"]["sign"] == ""):
-            f.write ("个性签名: 无\n");
-        else:
-            f.write ("个性签名: " + data["data"]["sign"] + "\n");
+        f.write ("\n用户信息:\n性别: " + data["data"]["sex"] + "\n等级: " + str (data["data"]["level"]) + "\n");
         if (data["data"]["vip"]["label"]["text"] == ""):
             f.write ("会员情况: 无会员\n");
         else:
             f.write ("会员情况: " + data["data"]["vip"]["label"]["text"] + "\n");
+        if (data["data"]["sign"] != ""):
+            f.write ("个性签名: " + data["data"]["sign"] + "\n");
         if (data["data"]["birthday"] != ""):
             f.write ("生日: " + data["data"]["birthday"] + "\n");
         print ("完成!");
