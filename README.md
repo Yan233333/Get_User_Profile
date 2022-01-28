@@ -1,3 +1,3 @@
-# Get_User_Profile (For Bilibili)
+# Get_user_profile (For Bilibili)
 
 Started on 2021.12.29
